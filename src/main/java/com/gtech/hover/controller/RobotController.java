@@ -1,13 +1,12 @@
 package com.gtech.hover.controller;
 
+import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.sun.jersey.spi.inject.Inject;
-
-@Path("/rest/mars/{comando}")
+@Path("/rest/mars/{command}")
 public class RobotController {
 
 	@Inject
@@ -15,8 +14,8 @@ public class RobotController {
 	
 	@POST
 	@Produces("text/plain")
-	public String getPosition(@PathParam("comando") String comando) {
-		RobotService manager = new RobotService(comando);
+	public String getPosition(@PathParam("command") String command) {
+		RobotService manager = new RobotService(command);
 		return manager.getPosition();
 	}
 }
