@@ -65,8 +65,8 @@ public class RobotService {
 		}
 	}
 
-	private void doCommand(String c) {
-		if (c.equals(leftCommand)) {
+	private void doCommand(String command) {
+		if (command.equals(leftCommand)) {
 			if (direction.equals(northDirection)) {
 				doSpin(westDirection);
 			} else if (direction.equals(westDirection)) {
@@ -76,7 +76,7 @@ public class RobotService {
 			} else if (direction.equals(eastDirection)) {
 				doSpin(northDirection);
 			}
-		} else if (c.equals(rightCommand)) {
+		} else if (command.equals(rightCommand)) {
 			if (direction.equals(northDirection)) {
 				doSpin(eastDirection);
 			} else if (direction.equals(eastDirection)) {
@@ -86,7 +86,7 @@ public class RobotService {
 			} else if (direction.equals(westDirection)) {
 				doSpin(northDirection);
 			}
-		} else if (c.equals(moveCommand)) {
+		} else if (command.equals(moveCommand)) {
 			doMove();
 		}
 	}
